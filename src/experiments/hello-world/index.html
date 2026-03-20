@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World — Playground</title>
+  <link rel="stylesheet" href="/shared/styles.css">
+  <style>
+    .demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 3rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    .greeting {
+      font-size: 2rem;
+      font-weight: 700;
+      min-height: 2.5rem;
+      transition: opacity 0.3s;
+    }
+
+    input {
+      padding: 0.75rem 1.25rem;
+      border: 2px solid var(--primary);
+      border-radius: var(--radius);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    input:focus {
+      box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.3);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hello World</h1>
+    <p class="subtitle">The simplest experiment</p>
+  </header>
+
+  <main>
+    <a href="/" class="back-link">← Back to playground</a>
+    <div class="demo">
+      <p class="greeting" id="greeting">Hello, World!</p>
+      <input type="text" id="nameInput" placeholder="Type your name..." autofocus>
+      <p style="color: var(--text-muted); font-size: 0.85rem;">Type above to see the greeting change in real time.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Octopus Labs</p>
+  </footer>
+
+  <script>
+    const input = document.getElementById('nameInput');
+    const greeting = document.getElementById('greeting');
+
+    input.addEventListener('input', () => {
+      const name = input.value.trim();
+      greeting.textContent = name ? `Hello, ${name}!` : 'Hello, World!';
+    });
+  </script>
+</body>
+</html>
