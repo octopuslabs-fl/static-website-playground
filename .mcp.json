@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "valaris": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/Users/tempadmin/Programming/valaris-intern/mcp-server",
+        "run",
+        "valaris-mcp"
+      ],
+      "env": {
+        "VALARIS_API_URL": "https://valaris-backend-897807564114.us-central1.run.app",
+        "VALARIS_AGENT_EMAIL": "sebastian@valaris.studio"
+      }
+    }
+  }
+}
